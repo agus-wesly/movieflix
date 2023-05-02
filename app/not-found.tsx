@@ -14,9 +14,9 @@ export default function NotFound() {
         We cannot find the page that you are looking for :(
       </EmptyPlaceholder.text>
 
-      <Link className={cn(buttonVariants({ variant: 'ghost' }))} href={'/'}>
-        Back to home
-      </Link>
+      <a className={cn(buttonVariants({ variant: 'ghost' }))} href="/">
+        Back
+      </a>
     </EmptyPlaceholder>
   )
 }

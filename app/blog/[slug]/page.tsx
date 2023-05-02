@@ -1,7 +1,12 @@
-import { allPosts } from 'contentlayer/generated'
+import { allPosts, allAuthors } from 'contentlayer/generated'
 import { Metadata } from 'next'
-import { absoluteUrl } from '@/lib/utils'
+import { absoluteUrl, cn, formattedDate } from '@/lib/utils'
 import { notFound } from 'next/navigation'
+import { Icons } from '@/components/icons'
+import Link from 'next/link'
+import { buttonVariants } from '@/components/ui/button'
+import Image from 'next/image'
+import { MDX } from '@/components/mdx-component'
 
 type PostPageProps = {
   params: {
@@ -17,7 +22,7 @@ async function getPostFromParams(params: { slug: string }) {
   return post
 }
 
-export async function generateMedaData({
+export async function generateMetadata({
   params,
 }: PostPageProps): Promise<Metadata> {
   const post = await getPostFromParams(params)
@@ -42,7 +47,63 @@ async function BlogSlugPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params)
   if (!post) return notFound()
 
-  return <div className="container">{JSON.stringify(post.body.code)}</div>
+  const authors = post.authors.map((author) =>
+    allAuthors.find((auth) => auth.title === author)
+  )
+
+  return (
+    <div className="container relative max-w-3xl py-10">
+      <Link
+        href={'/'}
+        className={cn(
+          buttonVariants({ variant: 'ghost' }),
+          'absolute top-16 -left-[200px] hidden md:inline-flex items-center gap-2'
+        )}
+      >
+        <Icons.left className="w-5 h-5" />
+        <p>See all post</p>
+      </Link>
+
+      <article className="flex flex-col gap-2">
+        <p className="text-muted-foreground">
+          Published on {formattedDate(post.date)}
+        </p>
+
+        <h1 className="text-foreground text-5xl font-heading font-bold">
+          {post.title}
+        </h1>
+
+        {authors.length
+          ? authors.map((auth) =>
+              auth ? (
+                <Link
+                  className="flex items-center gap-2"
+                  key={auth._id}
+                  href={auth.github}
+                >
+                  <Image
+                    src={auth.avatar}
+                    alt="author-profile"
+                    width={40}
+                    height={40}
+                    className="rounded-full border"
+                  />
+
+                  <div className="space-y-1">
+                    <p className="text-sm">{auth.title}</p>
+                    <p className="text-xs text-muted-foreground">
+                      @{auth.title}
+                    </p>
+                  </div>
+                </Link>
+              ) : null
+            )
+          : null}
+
+        <MDX code={post.body.code} />
+      </article>
+    </div>
+  )
 }
 
 export default BlogSlugPage
