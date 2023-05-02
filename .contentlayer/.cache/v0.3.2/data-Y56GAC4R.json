@@ -1,0 +1,30 @@
+{
+  "cacheItemsMap": {
+    "authors/isaac.mdx": {
+      "document": {
+        "title": "Isaaccccc",
+        "avatar": "https://avatars.githubusercontent.com/u/98297487?v=4",
+        "description": "Chae 24/7",
+        "github": "https://github.com/agustforbussines",
+        "body": {
+          "raw": "",
+          "html": ""
+        },
+        "_id": "authors/isaac.mdx",
+        "_raw": {
+          "sourceFilePath": "authors/isaac.mdx",
+          "sourceFileName": "isaac.mdx",
+          "sourceFileDir": "authors",
+          "contentType": "mdx",
+          "flattenedPath": "authors/isaac"
+        },
+        "type": "Author",
+        "slug": "/authors/isaac",
+        "slugAsParams": "isaac"
+      },
+      "documentHash": "1682934745936",
+      "hasWarnings": false,
+      "documentTypeName": "Author"
+    }
+  }
+}

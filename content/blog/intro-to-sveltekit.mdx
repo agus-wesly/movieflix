@@ -1,0 +1,45 @@
+---
+title: Svelte Kit
+description: Intro to svelte kit
+image: '/pictures/blog/svelte-kit.png'
+date: '2021-11-22'
+authors:
+  - Isaac
+---
+
+<Callout>
+  This text is from [Svelte docs](https://kit.svelte.dev/docs/introduction).
+  **Make sure you check it out**
+</Callout>
+
+## What is Svelte Kit ?
+
+In short, Svelte is a way of writing user interface components — like a navigation bar, comment section, or contact form — that users see and interact with in their browsers. The Svelte compiler converts your components to JavaScript that can be run to render the HTML for the page and to CSS that styles the page. You don't need to know Svelte to understand the rest of this guide, but it will help. If you'd like to learn more, check out [the Svelte tutorial.](https://svelte.dev/tutorial)
+
+## What does SvelteKit provide on top of Svelte ?
+
+> Svelte renders UI components. You can compose these components and render an entire page with just Svelte, but you need more than just Svelte to write an entire app.
+> It reflects changes to your code in the browser instantly to provide a lightning-fast and feature-rich development experience by leveraging Vite with a Svelte plugin to do Hot Module Replacement (HMR).
+
+<Image
+  src="https://trading-strategy.ghost.io/content/images/2023/04/Screenshot-2023-04-27-at-3.55.16-pm.png"
+  alt="Image"
+  width="718"
+  height="418"
+/>
+
+# Create new Project
+
+The easiest way to start building a SvelteKit app is to run `npm create`:
+
+```
+npm create svelte@latest my-app
+cd my-app
+npm install
+npm run dev
+```
+
+There are two basic concepts:
+
+- Each page of your app is a [Svelte](https://svelte.dev/) component
+- You create pages by adding files to the src/routes directory of your project. These will be server-rendered so that a user's first visit to your app is as fast as possible, then a client-side app takes over
