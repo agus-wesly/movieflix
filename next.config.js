@@ -6,7 +6,12 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ['avatars.githubusercontent.com', 'trading-strategy.ghost.io'],
+    domains: [
+      'avatars.githubusercontent.com',
+      'trading-strategy.ghost.io',
+      'images.tokopedia.net',
+      'image.tmdb.org',
+    ],
   },
 }
 

@@ -1,4 +1,4 @@
-import './globals.css'
+import '@/style/globals.css'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           'font-sans antialiased',
@@ -40,7 +40,6 @@ export default function RootLayout({
       >
         <Provider>
           {children}
-
           <Toaster />
         </Provider>
       </body>
