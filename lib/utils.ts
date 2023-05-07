@@ -29,7 +29,7 @@ export function getImageUrl({
   path,
 }: {
   size: ImageVariant
-  path: string
+  path: string | null
 }) {
   const width = size === 'small' ? 220 : 300
   const height = size === 'small' ? 330 : 450

@@ -55,6 +55,11 @@ export type Movie = {
   vote_count: number
 }
 
+export type MovieResponse = {
+  page: number
+  results: Movie[]
+}
+
 export type MovieVideo = {
   id: number
   results: {

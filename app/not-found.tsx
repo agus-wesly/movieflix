@@ -1,9 +1,11 @@
+'use client'
+
 import EmptyPlaceholder from '@/components/empty-placeholder'
-import Link from 'next/link'
-import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 export default function NotFound() {
+  const router = useRouter()
   return (
     <EmptyPlaceholder className="max-w-4-xl">
       <EmptyPlaceholder.icon name="danger" />
@@ -14,9 +16,9 @@ export default function NotFound() {
         We cannot find the page that you are looking for :(
       </EmptyPlaceholder.text>
 
-      <a className={cn(buttonVariants({ variant: 'ghost' }))} href="/">
+      <Button onClick={() => router.back()} variant={'ghost'}>
         Back
-      </a>
+      </Button>
     </EmptyPlaceholder>
   )
 }

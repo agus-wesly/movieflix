@@ -1,16 +1,17 @@
 import { env } from '@/env.mjs'
-import type { Movie } from '@/constant/movies'
+import type { MovieResponse } from '@/types'
+import type { RequestInit } from 'next/dist/server/web/spec-extension/request'
 
-type MovieResponse = {
-  page: number
-  results: Movie[]
-}
-
-export async function fetcher(endpoint: string): Promise<MovieResponse> {
+export async function fetcher(
+  endpoint: string,
+  options?: RequestInit
+): Promise<MovieResponse> {
   const response = await fetch(`${env.NEXT_PUBLIC_API_BASE_URL}/${endpoint}`, {
+    ...options,
     headers: {
+      ...options?.headers,
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${env.NEXT_PUBLIC_API_ACCESS_TOKEN}`,
     },
   })
 

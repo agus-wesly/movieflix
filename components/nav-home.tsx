@@ -38,7 +38,7 @@ function NavHome() {
 
           <Icons.movie className="w-6 h-6 hidden md:block" />
 
-          <p className="font-bold text-lg mr-4">Movie</p>
+          <p className="font-bold text-lg mr-4">MovieFlix</p>
         </div>
 
         <div className="space-x-4 flex items-center">

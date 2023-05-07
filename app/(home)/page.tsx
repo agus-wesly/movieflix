@@ -2,6 +2,8 @@ import MovieSection from '@/components/movie-section'
 import SwiperComponent from '@/components/swiper'
 import { fetcher } from '@/fetcher/movie'
 
+export const revalidate = 1440
+
 export default async function Home() {
   const [trendMovie, popularMovie, upcomingMovie] = await Promise.all([
     fetcher('/trending/all/day'),

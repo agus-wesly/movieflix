@@ -3,6 +3,9 @@ import { fetcher } from '@/fetcher/movie'
 import MovieList from '@/components/movie-list'
 import { absoluteUrl } from '@/lib/utils'
 import genre from '@/constant/genre'
+import { Metadata } from 'next'
+
+export const revalidate = 10080
 
 type Props = {
   params: {
@@ -10,16 +13,22 @@ type Props = {
   }
 }
 
-export function generateMetaData({ params }: Props) {
+export function generateMetadata({ params }: Props): Metadata {
   return {
-    title: params.genre,
+    title: params.genre[0],
     description: `Browse a list of ${params.genre} movies available in our database.`,
     openGraph: {
-      title: params.genre,
+      title: params.genre[0],
       type: 'website',
       url: absoluteUrl(`/genre/${params.genre}`),
     },
   }
+}
+
+export async function generateStaticParams() {
+  return genre.map((gen) => ({
+    genre: `${gen.id}`.split(' '),
+  }))
 }
 
 async function GenrePage({ params }: Props) {
@@ -28,6 +37,10 @@ async function GenrePage({ params }: Props) {
   }
 
   const movies = await fetcher(`/discover/movie?with_genres=${params.genre}`)
+
+  if (!movies.results.length) {
+    notFound()
+  }
 
   const genreNameList = params.genre.map(
     (gen) => genre.find((genList) => `${genList.id}` === gen)?.name

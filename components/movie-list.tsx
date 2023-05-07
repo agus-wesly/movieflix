@@ -1,6 +1,6 @@
 'use client'
 import MovieCard from './movie-card'
-import type { Movie } from '@/constant/movies'
+import type { Movie } from '@/types'
 
 type Props = {
   movies: Movie[]

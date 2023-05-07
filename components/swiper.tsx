@@ -9,7 +9,7 @@ import 'swiper/css/navigation'
 
 import '@/style/swiper.css'
 
-import { Pagination, Navigation } from 'swiper'
+import { Pagination, Navigation, Autoplay } from 'swiper'
 
 export default function SwiperComponent() {
   return (
@@ -22,7 +22,8 @@ export default function SwiperComponent() {
           clickable: true,
         }}
         navigation={true}
-        modules={[Pagination, Navigation]}
+        modules={[Pagination, Navigation, Autoplay]}
+        autoplay
         className="mySwiper"
       >
         <SwiperSlide>

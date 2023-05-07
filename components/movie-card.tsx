@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { Movie } from '@/constant/movies'
+import type { Movie } from '@/types'
 import { formattedDate } from '@/lib/utils'
 
 import { getImageUrl } from '@/lib/utils'
@@ -12,7 +12,7 @@ type Props = {
 
 function MovieCard({ movie }: Props) {
   return (
-    <div className="relative w-full group">
+    <Link className="relative w-full group" href={`/movie/${movie.id}`}>
       <Image
         width={240}
         height={2}
@@ -26,9 +26,7 @@ function MovieCard({ movie }: Props) {
       <p className="text-xs text-muted-foreground">
         {formattedDate(movie.release_date)}
       </p>
-
-      <Link href={`/movie/${movie.id}`} className="absolute inset-0" />
-    </div>
+    </Link>
   )
 }
 

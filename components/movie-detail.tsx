@@ -36,7 +36,7 @@ async function MovieDetail({ movie }: Props) {
   })
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 border-b pb-4 lg:pb-0 lg:border-b-transparent lg:border-r lg:pr-4">
       <VideoPlayer url={movieUrl} />
 
       <div className="">
@@ -44,7 +44,7 @@ async function MovieDetail({ movie }: Props) {
           <h1 className="text-2xl font-bold text-foreground">
             {movie.title} ({getYearFromDate(movie.release_date)})
           </h1>
-          <div className="flex mt-3 items-center gap-5">
+          <div className="flex mt-3 items-center gap-5 text-popover-foreground/80">
             <span>{movie.release_date}</span>
             {movie.runtime ? <span>{getDuration(movie.runtime)}</span> : null}
           </div>
