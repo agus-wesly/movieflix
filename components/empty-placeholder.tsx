@@ -9,7 +9,7 @@ function EmptyPlaceholder({ children, className, ...props }: EmptyPlaceholder) {
   return (
     <div
       className={cn(
-        'flex min-h-[400px] flex-col items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in-500',
+        'flex min-h-[90vh] flex-col items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in-500',
         className
       )}
       {...props}

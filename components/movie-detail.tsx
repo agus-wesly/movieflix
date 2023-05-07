@@ -30,7 +30,7 @@ async function MovieDetail({ movie }: Props) {
 
     return (
       <Link className="hover:text-accent-foreground/70" href={genreHref}>
-        {genre.name} {i !== movie.genres.length - 1 ? ',' : null}
+        {genre.name} {i !== movie.genres.length - 1 ? ', ' : null}
       </Link>
     )
   })
@@ -40,15 +40,15 @@ async function MovieDetail({ movie }: Props) {
       <VideoPlayer url={movieUrl} />
 
       <div className="">
-        <div className="mb-5">
-          <h1 className="text-2xl font-bold">
+        <div className="mb-5 text-sm text-popover-foreground">
+          <h1 className="text-2xl font-bold text-foreground">
             {movie.title} ({getYearFromDate(movie.release_date)})
           </h1>
-          <div className="flex items-center gap-5 text-sm text-accent-foreground/90">
+          <div className="flex mt-3 items-center gap-5">
             <span>{movie.release_date}</span>
-            <span>{genres}</span>
             {movie.runtime ? <span>{getDuration(movie.runtime)}</span> : null}
           </div>
+          <div>{genres}</div>
         </div>
         <p className="text-popover-foreground">{movie.overview}</p>
       </div>

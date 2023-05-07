@@ -12,7 +12,7 @@ function SidebarMobile() {
   useLockBodyScroll()
 
   return (
-    <div className="fixed inset-0 grid h-screen grid-flow-row auto-rows-max overflow-auto p-6 shadow-md  md:hidden z-50 top-14 animate-in slide-in-from-left-16">
+    <div className="fixed inset-0 grid h-screen grid-flow-row auto-rows-max overflow-auto shadow-md  md:hidden z-50 top-14 animate-in slide-in-from-left-16">
       <div className="relative z-20 grid rounded-md bg-popover p-4 text-popover-foreground shadow-md">
         <nav className="grid auto-rows-max">
           {navItem.map((nav, i) => (
