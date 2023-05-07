@@ -20,4 +20,9 @@ export default [
   { id: 37, name: 'Western' },
 ]
 
+export type Genre = {
+  id: number
+  name: string
+}[]
+
 // const IMG_URL = https://image.tmdb.org/t/p/w94_and_h141_bestv2/{path}

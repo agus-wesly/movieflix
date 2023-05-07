@@ -361,6 +361,6 @@ const movies = [
   },
 ]
 
-export type Movie = (typeof movies)[number]
+
 
 export default movies

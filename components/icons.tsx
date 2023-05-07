@@ -6,6 +6,7 @@ import {
   Laptop,
   PanelLeftOpen,
   PanelLeftClose,
+  Clapperboard,
 } from 'lucide-react'
 import type { Icon as LucidIcon } from 'lucide-react'
 
@@ -19,4 +20,5 @@ export const Icons = {
   system: Laptop,
   panelOpen: PanelLeftOpen,
   panelClose: PanelLeftClose,
+  movie: Clapperboard,
 }

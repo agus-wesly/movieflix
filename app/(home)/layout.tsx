@@ -20,7 +20,7 @@ export default function HomeLayout({
       <Sidebar />
       <div>
         <NavHome />
-        <div className="">{children}</div>
+        <div>{children}</div>
       </div>
     </div>
   )

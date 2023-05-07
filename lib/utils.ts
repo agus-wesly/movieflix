@@ -35,3 +35,15 @@ export function getImageUrl({
   const height = size === 'small' ? 330 : 450
   return `${env.NEXT_PUBLIC_IMG_URL}/w${width}_and_h${height}_bestv2${path}`
 }
+
+export function getYearFromDate(date: string) {
+  return new Date(date).getFullYear()
+}
+
+export function getDuration(minutes: number) {
+  const hours = Math.floor(minutes / 60)
+  const remainingMinutes = minutes % 60
+  const formattedHours = hours > 0 ? hours + 'h ' : ''
+  const formattedMinutes = remainingMinutes > 0 ? remainingMinutes + 'm' : ''
+  return formattedHours + formattedMinutes
+}
