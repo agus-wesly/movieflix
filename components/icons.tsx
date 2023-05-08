@@ -1,6 +1,7 @@
 import {
   AlertTriangle,
   ChevronLeft,
+  ChevronRight,
   Moon,
   Sun,
   Laptop,
@@ -15,6 +16,7 @@ export type Icon = LucidIcon
 export const Icons = {
   danger: AlertTriangle,
   left: ChevronLeft,
+  right: ChevronRight,
   dark: Moon,
   light: Sun,
   system: Laptop,

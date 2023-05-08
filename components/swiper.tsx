@@ -2,10 +2,10 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Image from 'next/image'
+import { Icons } from './icons'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
-import 'swiper/css/navigation'
 
 import '@/style/swiper.css'
 
@@ -14,6 +14,13 @@ import { Pagination, Navigation, Autoplay } from 'swiper'
 export default function SwiperComponent() {
   return (
     <>
+      <div className="image-swiper-button-prev">
+        <Icons.left className="w-32 h-32 text-muted-foreground/40" />
+      </div>
+      <div className="image-swiper-button-next">
+        <Icons.right className="w-32 h-32 text-muted-foreground/40" />
+      </div>
+
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -21,7 +28,10 @@ export default function SwiperComponent() {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={{
+          nextEl: '.image-swiper-button-next',
+          prevEl: '.image-swiper-button-prev',
+        }}
         modules={[Pagination, Navigation, Autoplay]}
         autoplay
         className="mySwiper"

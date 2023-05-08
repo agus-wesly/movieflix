@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation'
 import { Icons } from './icons'
 import TooltipComponent from './tooltip'
 import SidebarMobile from './sidebar-mobile'
+import SearchComponent from './search'
 
 function NavHome() {
   const [isMobileActive, setIsMobileActive] = useState(false)
@@ -37,8 +38,11 @@ function NavHome() {
           </div>
 
           <Icons.movie className="w-6 h-6 hidden md:block" />
-
           <p className="font-bold text-lg mr-4">MovieFlix</p>
+        </div>
+
+        <div className="flex-grow md:max-w-[320px] mr-4 lg:mr-0">
+          <SearchComponent />
         </div>
 
         <div className="space-x-4 flex items-center">
