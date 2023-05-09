@@ -8,7 +8,7 @@ import Footer from '@/components/footer'
 import { cn } from '@/lib/utils'
 import { siteConfig } from '@/config/site'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata = {
   title: {

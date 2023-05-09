@@ -38,7 +38,7 @@ function SearchComponent({ className, ...props }: SearchForm) {
   function handleSubmit(e: FormEvent) {
     e.preventDefault()
     const searchQuery = e.target.search.value
-
+    router.refresh()
     router.push(`/search?query=${searchQuery.toLowerCase()}`)
   }
 
