@@ -34,6 +34,7 @@ function MovieSimilarList({
         : undefined
     },
   })
+
   return (
     <div className="grid sticky top-0 h-[99vh] overflow-y-auto gap-4">
       <InfiniteScroll query={query}>

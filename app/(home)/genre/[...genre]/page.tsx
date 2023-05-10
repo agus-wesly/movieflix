@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation'
 import { fetcher } from '@/fetcher/movie'
-import MovieList from '@/components/movie-list'
 import { absoluteUrl } from '@/lib/utils'
 import genre from '@/constant/genre'
 import { Metadata } from 'next'
+import GenreMovieContainer from '@/components/genre-movie-container'
 
 export const revalidate = 10080
 
@@ -36,7 +36,7 @@ async function GenrePage({ params }: Props) {
     notFound()
   }
 
-  const movies = await fetcher(`/discover/movie?with_genres=${params.genre}`)
+  const movies = await fetcher(`/discover/movie?with_genres=${params.genre}&page=1`)
 
   if (!movies.results.length) {
     notFound()
@@ -55,7 +55,15 @@ async function GenrePage({ params }: Props) {
           {genreName}
         </h1>
       )}
-      {movies.results.length ? <MovieList movies={movies.results} /> : null}
+      {movies.results.length ? (
+        <GenreMovieContainer
+          genre={params.genre[0]}
+          initialMovies={{
+            pages: [movies],
+            pageParams: [1],
+          }}
+        />
+      ) : null}
     </div>
   )
 }

@@ -8,6 +8,7 @@ import MovieCard from './movie-card'
 import Loading from '@/app/(home)/search/loading'
 
 import type { MovieResponse } from '@/types'
+import MovieList from './movie-list'
 
 type Props = {
   initialMovies: InfiniteData<MovieResponse>
@@ -44,13 +45,13 @@ function SearchContainer({ initialMovies, searchParams }: Props) {
   }
 
   return (
-    <div className="gap-6 grid grid-cols-3 border-t py-4 justify-items-center md:justify-items-start md:grid-cols-5 ">
-      <InfiniteScroll query={query}>
+    <MovieList>
+      <InfiniteScroll query={query} className="col-span-full">
         {(response: MovieResponse) =>
           response.results.map((res) => <MovieCard key={res.id} movie={res} />)
         }
       </InfiniteScroll>
-    </div>
+    </MovieList>
   )
 }
 

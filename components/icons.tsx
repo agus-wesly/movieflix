@@ -8,6 +8,7 @@ import {
   PanelLeftOpen,
   PanelLeftClose,
   Clapperboard,
+  Loader,
 } from 'lucide-react'
 import type { Icon as LucidIcon } from 'lucide-react'
 
@@ -23,4 +24,5 @@ export const Icons = {
   panelOpen: PanelLeftOpen,
   panelClose: PanelLeftClose,
   movie: Clapperboard,
+  loader: Loader,
 }
