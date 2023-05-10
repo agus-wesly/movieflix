@@ -26,9 +26,7 @@ function InfiniteScroll<T>({ query, children }: Props<T>) {
         ? data?.pages?.map((result) => children(result))
         : children}
 
-      <div ref={ref}>
-        {isFetchingNextPage && hasNextPage ? 'Loading...' : ''}
-      </div>
+      <div ref={ref} className="h-2"></div>
     </>
   )
 }
