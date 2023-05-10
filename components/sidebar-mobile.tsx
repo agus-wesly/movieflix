@@ -24,7 +24,7 @@ function SidebarMobile() {
                       <Link
                         className={cn(
                           'p-2 rounded hover:bg-accent hover:text-accent-foreground space-x-2',
-                          pathname.includes(item.href)
+                          pathname === item.href
                             ? 'bg-secondary'
                             : 'bg-transparent'
                         )}

@@ -10,6 +10,8 @@ export const env = createEnv({
   },
   client: {
     NEXT_PUBLIC_IMG_URL: z.string().url(),
+    NEXT_PUBLIC_API_BASE_URL: z.string().url(),
+    NEXT_PUBLIC_API_ACCESS_TOKEN: z.string(),
   },
   runtimeEnv: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_BASE_URL,

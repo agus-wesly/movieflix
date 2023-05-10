@@ -10,6 +10,7 @@ export default async function Home() {
     fetcher('/movie/popular'),
     fetcher('/movie/upcoming'),
   ])
+
   return (
     <div>
       <div className="w-full relative h-[50vh] mb-5">

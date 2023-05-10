@@ -30,3 +30,27 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.image-swiper-button-next,
+.image-swiper-button-prev {
+  display: none;
+  position: absolute;
+  top: 35%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.image-swiper-button-prev {
+  left: 0;
+}
+
+.image-swiper-button-next {
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .image-swiper-button-next,
+  .image-swiper-button-prev {
+    display: flex;
+  }
+}

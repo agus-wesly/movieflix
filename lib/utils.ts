@@ -47,3 +47,10 @@ export function getDuration(minutes: number) {
   const formattedMinutes = remainingMinutes > 0 ? remainingMinutes + 'm' : ''
   return formattedHours + formattedMinutes
 }
+
+export async function testFetcher(page: number | string) {
+  const response = await fetch(
+    `https://rickandmortyapi.com/api/character/?page=${page}`
+  )
+  return await response.json()
+}
