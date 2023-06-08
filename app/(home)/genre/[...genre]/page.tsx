@@ -26,7 +26,7 @@ export function generateMetadata({ params }: Props): Metadata {
 }
 
 export async function generateStaticParams() {
-  return genre.map((gen) => ({
+  return genre.slice(0,6).map((gen) => ({
     genre: `${gen.id}`.split(' '),
   }))
 }

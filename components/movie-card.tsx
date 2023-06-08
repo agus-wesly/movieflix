@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import Link from 'next/link'
 import type { Movie } from '@/types'
 import { formattedDate } from '@/lib/utils'
@@ -13,9 +12,7 @@ type Props = {
 function MovieCard({ movie }: Props) {
   return (
     <Link className="relative w-full group" href={`/movie/${movie.id}`}>
-      <Image
-        width={240}
-        height={2}
+      <img
         className="object-cover rounded aspect-[9/14] lg:hover:scale-105 transition duration-200"
         src={getImageUrl({ size: 'small', path: movie.poster_path })}
         alt="poster"
