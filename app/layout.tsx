@@ -21,7 +21,6 @@ export const metadata = {
     google: 'fym6Pr38d-8SbaoZo5nfG3xkLoLWjJerjoeYH8NfB1E',
     },
   },
-}
 
 export default function RootLayout({
   children,
