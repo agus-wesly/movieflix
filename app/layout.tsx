@@ -11,16 +11,16 @@ import { siteConfig } from '@/config/site'
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata = {
+  verification: {
+    google: 'fym6Pr38d-8SbaoZo5nfG3xkLoLWjJerjoeYH8NfB1E',
+  },
   title: {
     default: siteConfig.name,
     template: `% | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: ['Next.js', 'React.js', 'Tailwind CSS', 'Movie'],
-  verification: {
-    google: 'fym6Pr38d-8SbaoZo5nfG3xkLoLWjJerjoeYH8NfB1E',
-    },
-  },
+},
 
 export default function RootLayout({
   children,
