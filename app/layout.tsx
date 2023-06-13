@@ -20,7 +20,7 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: ['Next.js', 'React.js', 'Tailwind CSS', 'Movie'],
-},
+}
 
 export default function RootLayout({
   children,
