@@ -10,6 +10,7 @@ const nextConfig = {
       'images.tokopedia.net',
       'image.tmdb.org',
     ],
+    unoptimized: true,
   },
 }
 
